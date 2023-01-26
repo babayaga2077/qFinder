@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/stopExecutionOnTimeout.js') }}"></script>
+<script src="{{ url_for('static', filename='js/recorder.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<title>AI!</title>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+
+
+<div class="outer">
+<div class="prod-logo">
+<a href=/>
+<img src="{{ url_for('static', filename='images/qf.png') }}" class="prod-img" alt="icon"/>
+</a>
+<ul class="main-nav">
+{% if session['LoggedIn'] %}
+<li class="nav-li"><a href="{{ url_for('ai') }}">Quotes</a></li>
+<li class="nav-li"><a href="{{ url_for('about') }}">About</a></li>
+<li class="nav-li"><a href="{{ url_for('logout') }}">Logout</a></li>
+{% else %}
+<li class="nav-li"><a href="{{ url_for('login') }}">Login</a></li>
+<li class="nav-li"><a href="{{ url_for('about') }}">About</a></li>
+{% endif %}
+</ul>
+</div>
+{% block content %}
+{% endblock %}
+
+</div>
+
+
+<h5 style="position: fixed;bottom: 0;margin-bottom: 5px;"> © 2022, QuoteFinder Corp.</h5>
+<img src="{{ url_for('static', filename='images/side.gif') }}" id="robot"/>
+
+</body>
+</html>

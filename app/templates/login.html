@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="inner">
+<div class="login-inner">
+<div class="login" id="login">
+
+	<h1>User biometric login</h1>
+    	
+		<button onclick="enableWebcam()" class="button">Use webcam</button>
+    									or
+
+		<label class="button" style="width: 200px">
+		<input type="file" name="ImgToUpload" id="ImgToUpload">
+		Upload your photo
+		</label>
+		<h3 id='res'></h3>
+</div>
+<div  class="login" id="webcam" style='display:none'>
+<div id="my_camera"></div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/webcam.min.js')}}"></script>
+		<button class="button" onClick="take_snapshot()">Take Snapshot</button>
+
+</div>
+
+</div>
+</div>
+
+{% endblock %}
+
+

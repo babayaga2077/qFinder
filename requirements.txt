@@ -1,0 +1,7 @@
+face_recognition==1.3.0
+Flask
+flask-mysql
+SpeechRecognition
+pocketsphinx
+pyopenssl
+Flask_Bcrypt==1.0.1

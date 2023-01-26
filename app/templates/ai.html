@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="inner">
+<div class="prod-left">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1><span style="color:#0f457f">To start the search</span></h1>
+<h1><span style="color:#0f457f">you can record your query:</span></h1>
+
+<div id="controls">
+<a href="#" class="button" id="recordButton" >Record</a>
+<a href="#" class="button" id="stopButton" style="display: none">Stop</a>
+</div>
+
+<h1><span style="color:#0f457f">or drop your query using wav file.</span></h1>
+    <label class="button">
+		<input type="file" name="fileToUpload" id="fileToUpload">
+    	Browse...
+	</label>
+<!-- Tested with gTTS-->
+<img id="preloader" src="{{ url_for('static', filename='images/preloader.gif') }}" style="display:none" >
+<div id='res'>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+
